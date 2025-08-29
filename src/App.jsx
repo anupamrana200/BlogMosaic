@@ -8,7 +8,6 @@ import { Toaster } from 'react-hot-toast';
 
 import './App.css'
 
-
 function App() {
   const [Loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -25,17 +24,35 @@ function App() {
     .finally(() => {setLoading(false)})
   }, []);
 
-
-  return !Loading ? (<div className='min-h-screen flex flex-wrap content-between bg-gray-400'> 
-    <Toaster position="top-right" />
-    <div className='w-full block'>
+  return !Loading ? (
+    <div className='min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100'> 
+      <Toaster 
+        position="top-right" 
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#1e293b',
+            color: '#f1f5f9',
+            borderRadius: '12px',
+            fontSize: '14px',
+            fontWeight: '500',
+          },
+        }}
+      />
       <Header/>
-      <main>
+      <main className='flex-1'>
         <Outlet/>
       </main>
       <Footer/>
     </div>
-  </div>) : null
+  ) : (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+        <p className="mt-4 text-slate-600 font-medium">Loading BlogMosaic...</p>
+      </div>
+    </div>
+  )
 }
 
 export default App
