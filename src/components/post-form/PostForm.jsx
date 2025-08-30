@@ -131,19 +131,6 @@ export default function PostForm({ post }) {
                     </p>
                 </div>
 
-                {/* Debug info - remove this after fixing
-                {process.env.NODE_ENV === 'development' && (
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
-                        <p className="text-sm text-yellow-800">
-                            <strong>Debug Info:</strong> User Status: {authStatus ? 'Authenticated' : 'Not Authenticated'}, 
-                            User Data: {userData ? 'Available' : 'Missing'}
-                            {userData && (
-                                <span>, User ID: {userData.$id || userData.id || userData._id || 'Not Found'}</span>
-                            )}
-                        </p>
-                    </div>
-                )} */}
-
                 {/* Form Card */}
                 <div className="bg-white rounded-2xl shadow-strong border border-slate-100 overflow-hidden">
                     <form onSubmit={handleSubmit(submit)} className="p-8">

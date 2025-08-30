@@ -168,7 +168,6 @@ function Footer() {
             </p>
             <div className="flex space-x-6 text-sm text-slate-400">
               <span>Made with ❤️ for writers</span>
-              <span>Anupam Rana | A Passionate Web Developer</span>
             </div>
           </div>
         </div>

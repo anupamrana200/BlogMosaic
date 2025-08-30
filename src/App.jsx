@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return !Loading ? (
-    <div className='min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100'> 
+    <div className='min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-x-hidden max-w-full'> 
       <Toaster 
         position="top-right" 
         toastOptions={{
@@ -40,13 +40,13 @@ function App() {
         }}
       />
       <Header/>
-      <main className='flex-1'>
+      <main className='flex-1 overflow-x-hidden max-w-full'>
         <Outlet/>
       </main>
       <Footer/>
     </div>
   ) : (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-x-hidden max-w-full">
       <div className="text-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
         <p className="mt-4 text-slate-600 font-medium">Loading BlogMosaic...</p>

@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react'
 import appwriteService from "../appwrite/config";
 import {Container, PostCard} from '../components'
 import {useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+    const navigate = useNavigate();
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
     const authStatus = useSelector((state) => state.auth.status)
